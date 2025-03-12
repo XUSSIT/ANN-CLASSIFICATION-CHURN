@@ -49,7 +49,7 @@ input_data=pd.DataFrame({
 })
 
 #One-hot encode the geography
-geo_encoded = onehotencoder_geo.transform(np.array(input_data['Geography']).reshape(-1,1)).toarray()
+geo_encoded = onehotencoder_geo.transform([[geography]]).toarray()
 geo_encoded_df=pd.DataFrame(geo_encoded,columns=onehotencoder_geo.get_feature_names_out(['Geography']))
 
 #Concatenate the data
